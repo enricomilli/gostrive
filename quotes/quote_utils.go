@@ -12,7 +12,6 @@ func Get() string {
 	quoteNum := rand.Intn(len(listOfQuotes))
 
 	return listOfQuotes[quoteNum]
-
 }
 
 func FromAuthor(author string) string {
@@ -21,11 +20,17 @@ func FromAuthor(author string) string {
 
 	quotesFromAuthor := getQuotesFromAuthor(author, listOfQuotes)
 
-	return FromList(quotesFromAuthor)
+	if len(quotesFromAuthor) < 1 {
+		return "No quotes from this author in the database"
+	}
 
+	return getRandomQuoteFromList(quotesFromAuthor)
 }
 
-func FromList(listOfQuotes []string) string {
+func getRandomQuoteFromList(listOfQuotes []string) string {
+	if len(listOfQuotes) == 1 {
+		return listOfQuotes[0]
+	}
 
 	quoteNum := rand.Intn(len(listOfQuotes))
 
@@ -34,7 +39,7 @@ func FromList(listOfQuotes []string) string {
 
 func getQuotesFromAuthor(author string, listOfQuotes []string) []string {
 
-	response := make([]string, len(listOfQuotes)/3)
+	response := []string{}
 
 	for _, quote := range listOfQuotes {
 
