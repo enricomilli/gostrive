@@ -5,12 +5,16 @@ gostrive is a simple command-line application written in Go that delivers inspir
 ## Installation
 
 To install gostrive, make sure you have Go installed on your system, then run:
-```go get github.com/enricomilli/gostrive```
+```
+go get github.com/enricomilli/gostrive
+```
 
 ## Usage
 
 Once installed, you can use gostrive by simply typing:
-```gostrive```
+```
+gostrive
+```
 
 This will display a random inspiring quote.
 
@@ -18,11 +22,15 @@ This will display a random inspiring quote.
 
 If you want a quote from a specific author, you can use the `--author` or `-a` flag:
 
-`gostrive --author "Albert Einstein"`
+```
+gostrive --author "Albert Einstein"
+```
 
 or
 
-`gostrive -a "Maya Angelou"`
+```
+gostrive -a "Maya Angelou"
+```
 
 Capitalization does not matter.
 
